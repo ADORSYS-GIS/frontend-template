@@ -1,0 +1,56 @@
+{
+  "welcome": "Welcome to the Frontend Template!",
+  "description": "This template provides a solid starting point for building modern web applications with TypeScript and React.",
+  "github": "View on GitHub",
+  "switchLanguage": "Switch to French",
+  "createCourse": {
+    "title": "Create New Course",
+    "form": {
+      "title": "Title",
+      "description": "Description",
+      "category": "Category",
+      "submit": "Create Course"
+    }
+  },
+  "common": {
+    "saving": "Saving...",
+    "view": "View",
+    "edit": "Edit",
+    "errorLoadingCourses": "Error loading courses.",
+    "errorLoadingCourse": "Error loading course details.",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure you want to delete this course?",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "courseList": {
+    "title": "My Courses",
+    "createCourse": "Create New Course",
+    "noCourses": "You haven't created any courses yet. Click 'Create New Course' to get started!"
+  },
+  "courseDetail": {
+    "description": "Description",
+    "category": "Category",
+    "instructorId": "Instructor ID",
+    "createdAt": "Created At",
+    "updatedAt": "Updated At",
+    "enroll": "Enroll",
+    "enrollSuccess": "Successfully enrolled in the course!",
+    "enrollError": "Failed to enroll in the course.",
+    "courseContent": "Course Content",
+    "createAssessment": "Create Assessment"
+  },
+  "editCourse": {
+    "title": "Edit Course",
+    "form": {
+      "title": "Title",
+      "description": "Description",
+      "category": "Category",
+      "submit": "Update Course"
+    }
+  },
+  "welcome_to_platform": "Welcome to the Online Learning Platform!",
+  "homepage_description": "Your journey to knowledge starts here. Explore a wide range of courses, track your progress, and earn achievements.",
+  "browse_courses": "Browse Courses",
+  "instructor_dashboard": "Instructor Dashboard"
+}

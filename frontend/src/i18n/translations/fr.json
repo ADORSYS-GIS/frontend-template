@@ -1,0 +1,56 @@
+{
+  "welcome": "Bienvenue sur le modèle Frontend !",
+  "description": "Ce modèle fournit un point de départ solide pour la création d'applications Web modernes avec TypeScript et React.",
+  "github": "Voir sur GitHub",
+  "switchLanguage": "Passer à l'anglais",
+  "createCourse": {
+    "title": "Créer un nouveau cours",
+    "form": {
+      "title": "Titre",
+      "description": "Description",
+      "category": "Catégorie",
+      "submit": "Créer le cours"
+    }
+  },
+  "common": {
+    "saving": "Enregistrement...",
+    "view": "Voir",
+    "edit": "Modifier",
+    "errorLoadingCourses": "Erreur lors du chargement des cours.",
+    "errorLoadingCourse": "Erreur lors du chargement des détails du cours.",
+    "delete": "Supprimer",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce cours ?",
+    "cancel": "Annuler",
+    "confirm": "Confirmer"
+  },
+  "courseList": {
+    "title": "Mes cours",
+    "createCourse": "Créer un nouveau cours",
+    "noCourses": "Vous n'avez pas encore créé de cours. Cliquez sur 'Créer un nouveau cours' pour commencer !"
+  },
+  "courseDetail": {
+    "description": "Description",
+    "category": "Catégorie",
+    "instructorId": "ID de l'instructeur",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "enroll": "S'inscrire",
+    "enrollSuccess": "Inscription au cours réussie !",
+    "enrollError": "Échec de l'inscription au cours.",
+    "courseContent": "Contenu du cours",
+    "createAssessment": "Créer une évaluation"
+  },
+  "editCourse": {
+    "title": "Modifier le cours",
+    "form": {
+      "title": "Titre",
+      "description": "Description",
+      "category": "Catégorie",
+      "submit": "Mettre à jour le cours"
+    }
+  },
+  "welcome_to_platform": "Bienvenue sur la plateforme d'apprentissage en ligne !",
+  "homepage_description": "Votre voyage vers la connaissance commence ici. Explorez une large gamme de cours, suivez vos progrès et gagnez des succès.",
+  "browse_courses": "Parcourir les cours",
+  "instructor_dashboard": "Tableau de bord de l'instructeur"
+}

@@ -1,0 +1,1210 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Online Learning Platform API",
+    "description": "API documentation for the Online Learning Platform",
+    "version": "1.0.0"
+  },
+  "servers": [
+    { "url": "http://localhost:8080", "description": "Generated server url" }
+  ],
+  "paths": {
+    "/api/v1/students/{id}": {
+      "get": {
+        "tags": ["Students"],
+        "operationId": "getStudentById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/StudentResponseDTO" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Students"],
+        "operationId": "updateStudent",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentUpdateRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/StudentResponseDTO" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Students"],
+        "operationId": "deleteStudent",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": { "200": { "description": "OK" } }
+      }
+    },
+    "/api/v1/quiz-questions/{id}": {
+      "get": {
+        "tags": ["Quiz Questions"],
+        "operationId": "getQuizQuestionById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/QuizQuestionDTO" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Quiz Questions"],
+        "operationId": "updateQuizQuestion",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/QuizQuestionDTO" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/QuizQuestionDTO" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Quiz Questions"],
+        "operationId": "deleteQuizQuestion",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": { "200": { "description": "OK" } }
+      }
+    },
+    "/api/v1/instructors/{id}": {
+      "get": {
+        "tags": ["Instructors"],
+        "operationId": "getInstructorById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstructorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Instructors"],
+        "operationId": "updateInstructor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstructorUpdateRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstructorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Instructors"],
+        "operationId": "deleteInstructor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": { "200": { "description": "OK" } }
+      }
+    },
+    "/api/v1/courses/{id}": {
+      "get": {
+        "tags": ["Courses"],
+        "operationId": "getCourseById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/CourseResponseDTO" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Courses"],
+        "operationId": "updateCourse",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourseUpdateRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/CourseResponseDTO" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Courses"],
+        "operationId": "deleteCourse",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": { "200": { "description": "OK" } }
+      }
+    },
+    "/api/v1/course-contents/{id}": {
+      "get": {
+        "tags": ["Course Contents"],
+        "operationId": "getCourseContentById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/CourseContentDTO" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Course Contents"],
+        "operationId": "updateCourseContent",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CourseContentDTO" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/CourseContentDTO" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Course Contents"],
+        "operationId": "deleteCourseContent",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": { "200": { "description": "OK" } }
+      }
+    },
+    "/api/v1/assessments/{id}": {
+      "get": {
+        "tags": ["Assessments"],
+        "operationId": "getAssessmentById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/AssessmentDTO" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Assessments"],
+        "operationId": "updateAssessment",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/AssessmentDTO" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/AssessmentDTO" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Assessments"],
+        "operationId": "deleteAssessment",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": { "200": { "description": "OK" } }
+      }
+    },
+    "/api/v1/students": {
+      "get": {
+        "tags": ["Students"],
+        "operationId": "getAllStudents",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/StudentResponseDTO" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Students"],
+        "operationId": "createStudent",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentCreateRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/StudentResponseDTO" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/quiz-submissions": {
+      "post": {
+        "tags": ["Quiz Submissions"],
+        "operationId": "createQuizSubmission",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/QuizSubmissionDTO" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/QuizSubmissionDTO" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/quiz-questions": {
+      "post": {
+        "tags": ["Quiz Questions"],
+        "operationId": "createQuizQuestion",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/QuizQuestionDTO" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/QuizQuestionDTO" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/instructors": {
+      "get": {
+        "tags": ["Instructors"],
+        "operationId": "getAllInstructors",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InstructorResponseDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Instructors"],
+        "operationId": "createInstructor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstructorCreateRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstructorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/enrollments": {
+      "post": {
+        "tags": ["Enrollments"],
+        "operationId": "createEnrollment",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/EnrollmentRequestDTO" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnrollmentResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/courses": {
+      "get": {
+        "tags": ["Courses"],
+        "operationId": "getAllCourses",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/CourseResponseDTO" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Courses"],
+        "operationId": "createCourse",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourseCreateRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/CourseResponseDTO" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/course-contents": {
+      "post": {
+        "tags": ["Course Contents"],
+        "operationId": "createCourseContent",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CourseContentDTO" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/CourseContentDTO" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/assessments": {
+      "post": {
+        "tags": ["Assessments"],
+        "operationId": "createAssessment",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/AssessmentDTO" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/AssessmentDTO" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/quiz-submissions/student/{studentId}": {
+      "get": {
+        "tags": ["Quiz Submissions"],
+        "operationId": "getQuizSubmissionsByStudentId",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/QuizSubmissionDTO" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/quiz-submissions/assessment/{assessmentId}": {
+      "get": {
+        "tags": ["Quiz Submissions"],
+        "operationId": "getQuizSubmissionsByAssessmentId",
+        "parameters": [
+          {
+            "name": "assessmentId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/QuizSubmissionDTO" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/quiz-questions/assessment/{assessmentId}": {
+      "get": {
+        "tags": ["Quiz Questions"],
+        "operationId": "getQuizQuestionsByAssessmentId",
+        "parameters": [
+          {
+            "name": "assessmentId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/QuizQuestionDTO" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/enrollments/student/{studentId}": {
+      "get": {
+        "tags": ["Enrollments"],
+        "operationId": "getEnrollmentsByStudentId",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EnrollmentResponseDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/enrollments/progress": {
+      "get": {
+        "tags": ["Enrollments"],
+        "operationId": "getProgress",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          },
+          {
+            "name": "courseId",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": { "schema": { "type": "number", "format": "double" } }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/enrollments/leaderboard/{courseId}": {
+      "get": {
+        "tags": ["Enrollments"],
+        "operationId": "getLeaderboard",
+        "parameters": [
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EnrollmentResponseDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/enrollments/course/{courseId}": {
+      "get": {
+        "tags": ["Enrollments"],
+        "operationId": "getEnrollmentsByCourseId",
+        "parameters": [
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EnrollmentResponseDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/enrollments/course/{courseId}/students": {
+      "get": {
+        "tags": ["Enrollments"],
+        "operationId": "getStudentsByCourseId",
+        "parameters": [
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/StudentResponseDTO" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/courses/search": {
+      "get": {
+        "tags": ["Courses"],
+        "operationId": "searchCoursesByTitle",
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/CourseResponseDTO" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/courses/instructor/{instructorId}": {
+      "get": {
+        "tags": ["Courses"],
+        "operationId": "findCoursesByInstructorId",
+        "parameters": [
+          {
+            "name": "instructorId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/CourseResponseDTO" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/courses/category/{category}": {
+      "get": {
+        "tags": ["Courses"],
+        "operationId": "findCoursesByCategory",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/CourseResponseDTO" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/course-contents/course/{courseId}": {
+      "get": {
+        "tags": ["Course Contents"],
+        "operationId": "getCourseContentsByCourseId",
+        "parameters": [
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/CourseContentDTO" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/assessments/course/{courseId}": {
+      "get": {
+        "tags": ["Assessments"],
+        "operationId": "getAssessmentsByCourseId",
+        "parameters": [
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/AssessmentDTO" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "StudentUpdateRequestDTO": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "email": { "type": "string" },
+          "enrollmentDate": { "type": "string", "format": "date" }
+        }
+      },
+      "StudentResponseDTO": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "format": "int64" },
+          "name": { "type": "string" },
+          "email": { "type": "string" },
+          "enrollmentDate": { "type": "string", "format": "date" },
+          "createdAt": { "type": "string", "format": "date-time" },
+          "updatedAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "QuizQuestionDTO": {
+        "required": ["correctAnswer", "questionText"],
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "format": "int64" },
+          "questionText": { "type": "string" },
+          "correctAnswer": { "type": "string" },
+          "options": {
+            "maxItems": 2147483647,
+            "minItems": 2,
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "assessmentId": { "type": "integer", "format": "int64" }
+        }
+      },
+      "InstructorUpdateRequestDTO": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "email": { "type": "string" },
+          "biography": { "type": "string" }
+        }
+      },
+      "InstructorResponseDTO": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "format": "int64" },
+          "name": { "type": "string" },
+          "email": { "type": "string" },
+          "biography": { "type": "string" },
+          "createdAt": { "type": "string", "format": "date-time" },
+          "updatedAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "CourseUpdateRequestDTO": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "maxLength": 2147483647,
+            "minLength": 3,
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 2147483647,
+            "minLength": 10,
+            "type": "string"
+          },
+          "category": { "type": "string" }
+        }
+      },
+      "CourseResponseDTO": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "format": "int64" },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "category": { "type": "string" },
+          "instructorId": { "type": "integer", "format": "int64" },
+          "createdAt": { "type": "string", "format": "date-time" },
+          "updatedAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "CourseContentDTO": {
+        "required": ["contentType", "title", "urlOrText"],
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "format": "int64" },
+          "title": { "type": "string" },
+          "contentType": { "type": "string" },
+          "urlOrText": { "type": "string" },
+          "courseId": { "type": "integer", "format": "int64" }
+        }
+      },
+      "AssessmentDTO": {
+        "required": ["title"],
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "format": "int64" },
+          "title": { "type": "string" },
+          "totalMarks": { "minimum": 1, "type": "integer", "format": "int32" },
+          "courseId": { "type": "integer", "format": "int64" }
+        }
+      },
+      "StudentCreateRequestDTO": {
+        "required": ["email", "enrollmentDate", "name"],
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "email": { "type": "string" },
+          "enrollmentDate": { "type": "string", "format": "date" }
+        }
+      },
+      "QuizSubmissionDTO": {
+        "required": ["assessmentId", "obtainedMarks", "studentId"],
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "format": "int64" },
+          "assessmentId": { "type": "integer", "format": "int64" },
+          "studentId": { "type": "integer", "format": "int64" },
+          "obtainedMarks": { "type": "integer", "format": "int32" },
+          "submittedAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "InstructorCreateRequestDTO": {
+        "required": ["email", "name"],
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "email": { "type": "string" },
+          "biography": { "type": "string" }
+        }
+      },
+      "EnrollmentRequestDTO": {
+        "required": ["courseId", "studentId"],
+        "type": "object",
+        "properties": {
+          "courseId": { "type": "integer", "format": "int64" },
+          "studentId": { "type": "integer", "format": "int64" }
+        }
+      },
+      "EnrollmentResponseDTO": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "format": "int64" },
+          "courseId": { "type": "integer", "format": "int64" },
+          "studentId": { "type": "integer", "format": "int64" },
+          "progressPercentage": { "type": "number", "format": "double" },
+          "enrollmentDate": { "type": "string", "format": "date-time" }
+        }
+      },
+      "CourseCreateRequestDTO": {
+        "required": ["category", "description", "title"],
+        "type": "object",
+        "properties": {
+          "title": {
+            "maxLength": 2147483647,
+            "minLength": 3,
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 2147483647,
+            "minLength": 10,
+            "type": "string"
+          },
+          "category": { "type": "string" },
+          "instructorId": { "type": "integer", "format": "int64" }
+        }
+      }
+    }
+  }
+}
