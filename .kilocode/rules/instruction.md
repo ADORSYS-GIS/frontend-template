@@ -39,8 +39,8 @@ nav_order: 1
 {: .warning }
 
 > **STEP 0: DESIGN FIRST**
-> If `docs/design.md` does not exist, or if the user prompt implies a new feature/page, **YOU MUST STOP** and ask the user for the necessary information to fill out the `docs/templates/design.md` template.
-> **DO NOT WRITE CODE** until `docs/design.md` is approved.
+> If `docs/project/design.md` does not exist, or if the user prompt implies a new feature/page, **YOU MUST STOP** and ask the user for the necessary information to fill out the `docs/templates/design.md` template.
+> **DO NOT WRITE CODE** until `docs/project/design.md` is approved.
 {: .warning }
 
 ## 0.5. Project Initialization & Cleanup
@@ -54,12 +54,12 @@ nav_order: 1
 
 ### Before Starting Implementation
 1. **Design Documentation**
-   - [ ] Ensure `docs/design.md` exists and is up-to-date
+   - [ ] Ensure `docs/project/design.md` exists and is up-to-date
    - [ ] Get explicit approval on the design before writing any code
    - [ ] Document all new components, data models, and API endpoints
 
 2. **Progress Tracking**
-   - [ ] Update `docs/progress.md` with the planned changes
+   - [ ] Update `docs/project/progress.md` with the planned changes
    - [ ] Break down the work into small, testable units
    - [ ] Get confirmation on the implementation plan
 
@@ -71,7 +71,7 @@ nav_order: 1
 
 2. **Before Phase Completion**
    - [ ] Run all tests and fix any issues
-   - [ ] Update `docs/progress.md` with completion status
+   - [ ] Update `docs/project/progress.md` with completion status
    - [ ] Get user sign-off before moving to the next phase
 
 ### After Implementation
@@ -100,7 +100,7 @@ nav_order: 1
 1. Complete all tasks in the current phase
 2. Run code quality checks
 3. Fix all issues
-4. Update `docs/progress.md`:
+4. Update `docs/project/progress.md`:
    - Mark completed items with `[x]`
    - Add completion timestamp
    - Update code quality log
@@ -141,7 +141,7 @@ flowchart TD
 ### 3. UI Components (The Look)
 -   **Action**: Create dumb components (receive data via props).
 -   **Goal**: Build the form, table, or card using `shadcn/ui`.
--   **Rule**: Use `docs/ui-design.md` for styling.
+-   **Rule**: Use `docs/project/ui-design.md` for styling.
 
 ### 4. Page Assembly (The Glue)
 -   **Action**: Create the Page component.
@@ -156,8 +156,8 @@ Templated Frontend Coding is a collaboration between **Project Planning** (high-
 | Steps                  | Human      | AI         | Comment                                                                 |
 |:-----------------------|:----------:|:----------:|:------------------------------------------------------------------------|
 | 1. Requirements        | ★★★ High  | ★☆☆ Low   | Humans define scope, users, and business context                        |
-| 2. Design Documentation| ★★☆ Medium| ★★☆ Medium| **MANDATORY**: AI fills `docs/design.md` based on user prompt           |
-| 3. **Roadmap & Phasing**| ★☆☆ Low   | ★★★ High  | **CRITICAL**: AI creates `docs/progress.md` to track state across chats |
+| 2. Design Documentation| ★★☆ Medium| ★★☆ Medium| **MANDATORY**: AI fills `docs/project/design.md` based on user prompt           |
+| 3. **Roadmap & Phasing**| ★☆☆ Low   | ★★★ High  | **CRITICAL**: AI creates `docs/project/progress.md` to track state across chats |
 | 4. Utilities & Libs    | ★★☆ Medium| ★★☆ Medium| Humans pick stack → AI scaffolds setup                                  |
 | 5. Data Schema         | ★☆☆ Low   | ★★★ High  | AI creates types, API contracts, constants → humans verify             |
 | 6. Components & Hooks  | ★☆☆ Low   | ★★★ High  | AI generates all reusable pieces based on design                        |
@@ -171,27 +171,27 @@ Templated Frontend Coding is a collaboration between **Project Planning** (high-
    Clarify the project goals and confirm a templated CRUD app is the right fit.
 
 2. **Design Documentation** → **MANDATORY STEP**
-   - **Action**: Check if `docs/design.md` exists.
-   - **If NO**: Use `docs/templates/design.md` to ask the user for details. Create `docs/design.md`.
+   - **Action**: Check if `docs/project/design.md` exists.
+   - **If NO**: Use `docs/templates/design.md` to ask the user for details. Create `docs/project/design.md`.
    - **If YES**: Update it with new feature details.
    - **Content**: One-line description per page, Mermaid flow diagrams, Routing table, i18n plan.
 
-2.5. **UI Design Documentation** → **MANDATORY STEP**
-   - **Action**: Check if `docs/ui-design.md` exists.
-   - **If NO**: Use `docs/templates/ui-design.md` to ask the user for detailed UI design preferences. Create `docs/ui-design.md`.
-   - **If YES**: Update it with new UI design details.
-   - **Content**: Detailed visual identity (Color, Vibe, Typography), component design rules, responsive behavior, micro-interactions.
-   - **Rule**: **ALWAYS** pull from `docs/ui-design.md` when building any UI component or page.
+2.5. **UI Design Documentation (The "Lovable Standard")** → **CRITICAL STEP**
+   - **Action**: Check if `docs/project/ui-design.md` exists.
+   - **If NO**: Use the new, highly detailed `docs/templates/ui-design.md` to ask the user for the application's visual identity. Create `docs/project/ui-design.md`. **DO NOT PROCEED WITHOUT APPROVAL.**
+   - **If YES**: Review and update it with any new UI requirements.
+   - **Goal**: To produce an elegant, beautiful, and intuitive UI that matches the quality of top-tier applications. A poor or basic UI is not acceptable.
+   - **Rule**: **EVERY** UI component, page, and layout **MUST** strictly adhere to the principles and specifications defined in `docs/project/ui-design.md`. This includes the header, which must match the application's theme.
 
 3. **Roadmap & Progress Tracking** → **TOKEN MANAGEMENT SAVER**
-   - **Action**: Check if `docs/progress.md` exists.
+   - **Action**: Check if `docs/project/progress.md` exists.
    - **If NO**: Create it using `docs/templates/progress.md`. Break the project into Phases.
    - **If YES**: Read it to see what is next.
    - **Rule**: **NEVER** try to build the whole app in one go. Build one Phase, mark it complete, then ask user to restart chat.
 
 3. **Utilities & Libs** → see `docs/api-integration.md`
 4. **Data Schema & Constants** → see `docs/data-types.md`
-5. **Components & Hooks** → see `docs/components.md`, `docs/hooks.md`, and **`docs/ui-design.md`** (for styling rules)
+5. **Components & Hooks** → see `docs/components.md`, `docs/hooks.md`, and **`docs/project/ui-design.md`** (for styling rules)
 6. **Pages Implementation** → **MUST READ** `docs/pages.md` (the bible for every new CRUD page)
 7. **Authentication** → see `docs/authentication.md`
 8. **Internationalization** → see `docs/internationalization.md`
@@ -218,7 +218,10 @@ my_crud_app/
 │       └── main.tsx
 ├── docs/                 → ALL documentation lives here
 │   ├── intro.md          ← YOU ARE HERE
-│   ├── design.md         ← Project-specific design (create per project)
+│   ├── project/          ← Project-specific documentation
+│   │   ├── design.md     ← Project-specific design (create per project)
+│   │   ├── ui-design.md  ← Project-specific UI design
+│   │   └── progress.md   ← Project progress tracking
 │   ├── pages.md          ← How to implement any CRUD page
 │   ├── forms.md          ← Form patterns (Zod + React Hook Form)
 │   ├── tables.md         ← Table patterns (TanStack Table)
@@ -237,7 +240,7 @@ my_crud_app/
 | You want to…                              | → Open this exact file                              | Path                     |
 |-------------------------------------------|------------------------------------------------------|--------------------------|
 | Create a new CRUD page (list + form)      | → **docs/pages.md** (start here every time)          | `docs/pages.md`          |
-| **Design a Beautiful UI**                 | → **docs/ui-design.md** (Prompt Refinement)          | `docs/ui-design.md`      |
+| **Design a Beautiful, Elegant UI**        | → **docs/project/ui-design.md** (The Lovable Standard)       | `docs/project/ui-design.md`      |
 | Build a Form (Zod + React Hook Form)      | → **docs/forms.md**                                  | `docs/forms.md`          |
 | Build a Table (TanStack Table)            | → **docs/tables.md**                                 | `docs/tables.md`         |
 | Implement login / logout / protected routes| → Authentication guide                               | `docs/authentication.md` |
@@ -254,23 +257,28 @@ my_crud_app/
 ## AI Chain of Thought (Follow this for every prompt)
 
 1.  **Analyze Request**: What is the user asking for? (New Page? Bug Fix? Refactor?)
-2.  **Refine UI Prompt** (Crucial for "Lovable" Quality):
-    -   **Action**: Check `docs/ui-design.md`.
-    -   **If NO**: Use `docs/templates/ui-design.md` to ask the user for detailed UI design preferences. Create `docs/ui-design.md`.
-    -   **If YES**: Update it with new UI design details.
-    -   **Task**: Expand the user's simple prompt into a detailed design specification.
-    -   **Requirement**: Define a **UNIQUE** visual identity (Color, Vibe, Typography) – do not default to generic styles.
-3.  **Check Design**: Does `docs/design.md` cover this? If not, ask user.
-4.  **Check Roadmap**: Open `docs/progress.md`. What is the next unchecked item? **DO THAT ONLY.**
+2.  **Design Documentation (docs/project/design.md)**:
+    -   **Action**: Check if `docs/project/design.md` exists.
+    -   **If NO**: Use `docs/templates/design.md` to ask the user for details. Create `docs/project/design.md`. **STOP and ask for user approval.**
+    -   **If YES**: Update it with new feature details.
+3.  **Roadmap & Progress Tracking (docs/project/progress.md)**:
+    -   **Action**: Check if `docs/project/progress.md` exists.
+    -   **If NO**: Create it using `docs/templates/progress.md`. Break the project into Phases. **STOP and ask for user approval.**
+    -   **If YES**: Read it to see what is next.
+4.  **UI Design Documentation (The "Lovable Standard")**:
+    -   **Action**: Check if `docs/project/ui-design.md` exists.
+    -   **If NO**: Use `docs/templates/ui-design.md` to gather the required information for a premium UI. Create `docs/project/ui-design.md`. **STOP and ask for user approval.**
+    -   **If YES**: Review and confirm it aligns with the current task.
+    -   **Requirement**: The output **MUST** be a unique, elegant, and beautiful design. Do not create generic, cookie-cutter UIs. Every detail, from the header to the buttons, must be intentionally designed according to the "Lovable Standard" defined in the template.
 5.  **Plan Files**:
     -   Need a new type? -> `frontend/src/types/`
     -   Need data? -> `frontend/src/hooks/` (wrap OpenAPI)
     -   Need a form? -> Read `docs/forms.md`
     -   Need a table? -> Read `docs/tables.md`
     -   Need a page? -> Read `docs/pages.md`
-5.  **Execute**: Write code following the patterns in the docs EXACTLY.
+6.  **Execute**: Write code following the patterns in the docs EXACTLY.
     -   **Constraint**: Fix all errors in the current file immediately. Do not leave broken code.
-6.  **Verify**: Check against `docs/testing.md`.
+7.  **Verify**: Check against `docs/testing.md`.
 
 > From this day forward, the only acceptable answer to any “How do I…?” question is:  
 > **“Check src/docs/intro.md – it tells you exactly which file to read.”**

@@ -1,90 +1,133 @@
-# UI/UX Design System & Prompt Refinement
+# UI/UX Design System: The $10,000 Application Standard
 
-> **Goal**: Transform simple user requests into professional, "Lovable-quality" UI implementations.
-> **Philosophy**: Great UI comes from **Smart Defaults** + **Design Rules** + **Prompt Refinement**.
+> **ACTION**: After creating or updating this `ui-design.md` file, **YOU MUST STOP** and ask the user for explicit approval. This document is the single source of truth for the application's visual identity. No UI code should be written until this is approved.
+{: .important }
 
-## 1. The "Hidden" System Prompt (Internalize This)
-
-Whenever you design a UI, you must internally apply these rules **BEFORE** writing code:
-
-1.  **Modern Best Practices**:
-    -   **Spacing**: Use generous whitespace (padding/margin). Avoid cramped layouts.
-    -   **Hierarchy**: Use font weight and size to guide the eye. Primary actions must pop.
-    -   **Contrast**: Ensure text is readable. Use subtle borders/shadows for depth, not heavy lines.
-    -   **Feedback**: Interactive elements must have hover/active states.
-
-2.  **Visual Style (The "Lovable" Look)**:
-    -   **Clean & Minimal**: Less is more. Remove unnecessary borders and backgrounds.
-    -   **Soft Aesthetics**: Rounded corners (`rounded-lg` or `rounded-xl`), soft shadows (`shadow-sm` or `shadow-md`).
-    -   **Typography**: Use `Inter` or system fonts. Headings `font-bold` or `font-semibold`.
-    -   **Colors**: Neutral backgrounds (`bg-white`, `bg-gray-50/95`). One primary accent color.
-
-## 2. Prompt Refinement Protocol
-
-**NEVER** take a user prompt literally if it results in a basic UI. You must **EXPAND** it.
-
-### Example Transformation
-
-**User Input**:
-> "Build a dashboard for a fitness app."
-
-**Your Internal Refined Prompt (Execute THIS)**:
-> "Create a modern, minimal, responsive dashboard for a fitness app.
-> **Layout**: Grid-based with a sidebar navigation and a top header.
-> **Style**: Clean, professional, soft shadows, rounded corners.
-> **Color Palette**: White background, gray text, vibrant blue/purple accent for metrics.
-> **Components**:
-> -   **Stats Cards**: 4-column grid showing Steps, Calories, Heart Rate. Use icons and trend indicators.
-> -   **Activity Chart**: Large area chart showing weekly progress.
-> -   **Recent Workouts**: List view with avatars and status badges.
-> **Typography**: Large, clear headings (text-2xl font-bold). Readable body text (text-sm text-muted-foreground)."
-
-## 3. Component Design Rules (shadcn/ui + Tailwind)
-
-### Cards
--   **Don't**: `border border-gray-200 p-4`
--   **Do**: `bg-card text-card-foreground rounded-xl border shadow-sm hover:shadow-md transition-shadow p-6`
-
-### Buttons
--   **Don't**: `bg-blue-500 text-white p-2`
--   **Do**: `h-10 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50` (Use `Button` component!)
-
-### Inputs
--   **Do**: Use `Input` component with `placeholder` and `Label`. Add helper text for context.
-
-## 4. Responsive Behavior
--   **Mobile First**: Design for mobile, then scale up (`md:`, `lg:`).
--   **Grid Layouts**: Use `grid-cols-1 md:grid-cols-2 lg:grid-cols-4`.
--   **Navigation**: Hamburger menu on mobile, Sidebar/Topnav on desktop.
-
-## 5. Micro-Interactions
--   Add `transition-all duration-200` to interactive elements.
--   Use `hover:scale-[1.02]` for cards to add tactile feel.
--   Use `active:scale-95` for buttons.
-
-## 6. Creating a UNIQUE Identity (Anti-Cookie-Cutter)
-
-To ensure every app feels distinct, you must define a **Visual Signature** during the Design Phase.
-
-### A. The "Vibe" Check
-Before coding, ask: *What is the personality of this app?*
--   **Corporate/Trust**: Serif headings (`Playfair Display`), Navy/Forest Green, Sharp corners (`rounded-sm`).
--   **Start-up/SaaS**: Sans-serif (`Inter`), Vibrant Blue/Purple, Soft corners (`rounded-xl`).
--   **Lifestyle/Creative**: Display font (`Outfit`), Pastels/Earth tones, Organic shapes.
--   **Data-Heavy**: Monospace numbers, High contrast, Neutral background.
-
-### B. The Variable System
-Never hardcode "blue-600". Use semantic names in your head, but map them to distinct Tailwind colors for the project.
-
-1.  **Primary Color**: Don't just use Blue. Try Indigo, Rose, Emerald, Violet, or Slate.
-2.  **Radius**: `rounded-none` (Brutalist) vs `rounded-md` (Standard) vs `rounded-2xl` (Friendly).
-3.  **Surface**: Pure White (`bg-white`) vs Off-White (`bg-slate-50`) vs Dark Mode.
-
-### C. Unique Layout Patterns
--   Don't always use a Sidebar. Consider a **Top Navigation** with a mega-menu.
--   Don't always use a Card Grid. Consider a **List View** or a **Masonry Layout**.
--   Add a **Signature Gradient** or **Pattern** to the background or header to distinguish the brand.
+> **Goal**: To create interfaces that are not just functional, but **beautiful, intuitive, and memorable**. We are building a **$10,000 premium application**; the user interface must be perfect, elegant, and flawless. Every pixel matters.
+> **Philosophy**: We achieve this through a systematic approach: a strong **Visual Foundation**, consistent **Layouts**, meticulously designed **Components**, and delightful **Micro-interactions & Animations**.
 
 ---
 
-**When the user asks for a UI, check this file to ensure it looks PREMIUM and UNIQUE.**
+## 1. The Visual Foundation (The Soul of the App)
+
+This section defines the core visual identity. It's what makes the app unique and recognizable.
+
+### A. Brand Identity & "Vibe"
+
+First, we must understand the application's personality.
+
+*   **Keywords**: What are 3-5 keywords that describe the brand? (e.g., "Professional, Trustworthy, Innovative" or "Playful, Creative, Friendly").
+*   **Moodboard/Inspiration**: What are 2-3 existing apps or websites that capture the desired aesthetic?
+
+### B. Color Palette
+
+A consistent and harmonious color palette is crucial. Use tools like Coolors or Adobe Color to generate one.
+
+*   **Primary**: The main brand color, used for primary buttons and key interactive elements.
+*   **Secondary**: An accent color used to complement the primary color.
+*   **Neutrals**: A range of grays/off-whites for text, backgrounds, and borders. (e.g., `bg-background`, `bg-card`, `text-foreground`, `text-muted-foreground`).
+*   **Semantic**: Colors for system feedback.
+    *   **Success**: Green (e.g., for successful operations).
+    *   **Warning**: Yellow/Orange (e.g., for warnings).
+    *   **Error**: Red (e.g., for errors and destructive actions).
+
+### C. Typography
+
+Typography gives the application its voice.
+
+*   **Heading Font**: (e.g., Inter, Outfit, Playfair Display). Specify font weight (e.g., `font-bold`, `font-semibold`).
+*   **Body Font**: (e.g., Inter, System Fonts). Specify font weight (e.g., `font-normal`).
+*   **Typographic Scale**: Define a consistent scale for font sizes (e.g., `text-xs`, `text-sm`, `text-base`, `text-lg`, `text-xl`, `text-2xl`, etc.).
+
+### D. Iconography
+
+*   **Icon Set**: (e.g., Lucide, Heroicons, Phosphor Icons).
+*   **Style**: (e.g., Outline, Solid).
+*   **Weight/Stroke**: (e.g., 1.5px).
+
+---
+
+## 2. Layout & Composition (The Skeleton)
+
+This defines the structure and spacing of the application.
+
+### A. Spacing System
+
+Use a consistent spacing scale based on a base unit (e.g., 4px or 8px). This applies to `margin`, `padding`, and `gap`.
+
+*   **Example Scale**: `space-1` (4px), `space-2` (8px), `space-4` (16px), `space-6` (24px), `space-8` (32px).
+
+### B. Layout Patterns
+
+*   **Header**: The header must be thoughtfully designed. It's not just a container for links.
+    *   **Style**: Should it be sticky? Should it have a subtle border or shadow? Does it have a background color or is it transparent?
+    *   **Content**: Logo, main navigation, user profile/actions (e.g., settings, logout), theme switcher.
+    *   **Theme Matching**: The header's design must directly reflect the app's "Vibe". A corporate app might have a clean, sharp header, while a creative app might have a more expressive one.
+*   **Page Layouts**: Define common page structures.
+    *   **Dashboard**: Sidebar + Main content area.
+    *   **Settings**: Two-column layout with navigation on the left.
+    *   **Centered Form**: For login, registration, etc.
+
+---
+
+## 3. Component Design (The Building Blocks)
+
+Every component must be styled with precision and care. Use `shadcn/ui` components as a base, but customize them to fit the brand.
+
+### Cards
+*   **Don't**: Use a simple border. `border border-gray-200 p-4`
+*   **Do**: Create depth and a premium feel. `bg-card text-card-foreground rounded-xl border shadow-sm hover:shadow-md transition-shadow p-6`
+*   **Consider**: Adding a subtle gradient border or a colored top border for emphasis.
+
+### Buttons
+*   **Don't**: Use default, unstyled buttons.
+*   **Do**: Use the `Button` component and its variants. Ensure all buttons have clear `hover`, `active`, and `disabled` states.
+*   **Primary Action**: The primary button should stand out.
+*   **Secondary Action**: Should be less prominent than the primary.
+*   **Icon Buttons**: Use for actions in tight spaces, and always include a `Tooltip`.
+
+### Forms & Inputs
+*   **Do**: Use the `Input`, `Label`, `Textarea` components.
+*   **Style**: Inputs should have a clean, modern look. Use placeholders effectively.
+*   **Feedback**: Provide clear visual feedback for `focus`, `error`, and `disabled` states.
+*   **Helper Text**: Use helper text below inputs to provide context or instructions.
+
+---
+
+## 4. The Magic Touches (Animations & Delight)
+
+This is what separates a good UI from a great one. Animations should be purposeful, not distracting.
+
+### A. Micro-interactions
+Subtle animations provide feedback and guide the user.
+*   **Interactive Elements**: `transition-all duration-200`
+*   **Card Hover**: `hover:scale-[1.02]`
+*   **Button Press**: `active:scale-95`
+
+### B. Advanced Animations & Transitions
+*   **Page Transitions**: Implement subtle fade or slide transitions between pages.
+    *   **Prompt**: "Use a library like Framer Motion to add a gentle fade-in and slide-up animation to page content as it loads."
+*   **Staggered List Animations**: Animate lists of items (e.g., tables, cards) so they appear one after another.
+    *   **Prompt**: "When a list of items is loaded, apply a staggered animation where each item fades in and slides up with a 50ms delay between them."
+*   **State Change Animations**: Animate changes in component state, such as expanding/collapsing an accordion.
+    *   **Prompt**: "Animate the opening and closing of accordions and dropdowns with a smooth height transition."
+
+### C. System Feedback
+*   **Loading States**: Use skeleton loaders (`Skeleton` component) for content that is loading. This provides a better perceived performance than a spinner.
+*   **Empty States**: When a list or table is empty, display a helpful message, an illustration, and a call-to-action (e.g., a "Create New" button).
+*   **Notifications (Toasts)**: Use `Sonner` for non-intrusive feedback on actions. Animate their entry and exit from the screen.
+
+---
+
+## 5. The $10,000 Quality Checklist
+
+Before submitting any UI work, verify it against this checklist.
+
+- [ ] **Consistency**: Is the use of color, typography, and spacing consistent across all pages?
+- [ ] **Hierarchy**: Is it clear what the most important elements on the page are?
+- [ ] **Clarity**: Is the UI easy to understand and navigate? Is text readable?
+- [ ] **Feedback**: Does the UI provide feedback for all user interactions (hover, click, loading, success, error)?
+- [ ] **Elegance**: Is the design clean, uncluttered, and visually appealing? Have all unnecessary elements been removed?
+- [ ] **Delight**: Are there subtle animations and micro-interactions that make the experience enjoyable?
+- [ ] **Brand Alignment**: Does the UI reflect the defined "Vibe" and brand identity?
+- [ ] **Premium Feel**: Does this look and feel like a $10,000 application? Is it flawless?

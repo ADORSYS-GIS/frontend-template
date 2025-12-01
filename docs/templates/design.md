@@ -1,9 +1,12 @@
 
 # Design Document: {{ PROJECT_NAME }}
 
-> **CRITICAL INSTRUCTION FOR ANY DEVELOPER OR AI**  
-> You **MUST** fill this entire document with the user/client before writing a single line of code.  
-> If any section is empty or says "[FILL ME]", **STOP** and ask the user for the missing information.  
+> **ACTION**: After creating or updating this `design.md` file, **YOU MUST STOP** and ask the user for explicit approval before proceeding to any other step.
+{: .important }
+
+> **CRITICAL INSTRUCTION FOR ANY DEVELOPER OR AI**
+> You **MUST** fill this entire document with the user/client before writing a single line of code.
+> If any section is empty or says "[FILL ME]", **STOP** and ask the user for the missing information.
 > This file is the contract. Nothing gets built until this is signed off.
 
 {: .warning }
@@ -14,7 +17,7 @@
 {: .warning }
 
 ## 1. Project Name & One-Line Description
-**Project Name:**  
+**Project Name:**
 **Tagline (max 12 words):** What does this app do and for whom?
 
 ## 2. Target Users & Roles

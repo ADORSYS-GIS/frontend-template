@@ -1,5 +1,8 @@
 # Project Progress & Roadmap: [Project Name]
 
+> **ACTION**: After creating or updating this `progress.md` file, **YOU MUST STOP** and ask the user for explicit approval before proceeding to any other step.
+{: .important }
+
 > **MANDATORY WORKFLOW RULES:**
 > 1. **Code Quality Checks**: Before marking any phase/step as complete, you MUST:
 >    - Run `npm run lint:check` and fix ALL issues
@@ -7,13 +10,13 @@
 >    - Run `npm run build` to verify successful compilation
 >    - Verify all related files are error-free
 >    - Only proceed if all checks pass
-> 
+>
 > 2. **Phase Completion**:
 >    - Update this file IMMEDIATELY after completing each phase/step
 >    - Mark completed items with `[x]`
 >    - Add completion timestamp
 >    - Run code quality checks again after updates
-> 
+>
 > 3. **File Management**:
 >    - Check this file at the start of EVERY session
 >    - Never skip code quality checks
